@@ -25,13 +25,14 @@ while i != len(allwords)-1:
     if allwords[i].isalpha():
         # print(allwords[i])
         if k < 2:
-            newlist.append([allwords[i],allwords[i+1]])
-            # print(newlist)
+            if allwords[i+1].isalpha():
+                newlist.append([allwords[i],allwords[i+1]])
+            elif i != len(allwords):
+                newlist.append([allwords[i], allwords[i+2]])
             k += 1
         else:
             k = 0
-        #     i -= 2
-        #     j += 1
+            i -= 1
     i += 1
 print(newlist)
 
