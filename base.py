@@ -14,9 +14,27 @@ print(words)
 print(nltk.wordpunct_tokenize(text))
 #print(nltk.pos_tag(words))
 allwords = nltk.wordpunct_tokenize(text)
-for i in allwords:
-    if(i.isalpha()):
-        print(i)
+newlist=[]
+# newlist[0].append('jsjs')
+n = 0
+j = 0
+k = 0
+i = 0
+print('list length',len(allwords))
+while i != len(allwords)-1:
+    if allwords[i].isalpha():
+        # print(allwords[i])
+        if k < 2:
+            newlist.append([allwords[i],allwords[i+1]])
+            # print(newlist)
+            k += 1
+        else:
+            k = 0
+        #     i -= 2
+        #     j += 1
+    i += 1
+print(newlist)
+
 
 def entities(text):
     return ne_chunk(
